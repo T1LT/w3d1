@@ -6,6 +6,6 @@ class Player
 
     def guess
         print "#{@name}, enter a character: "
-        gets.chomp
+        gets.chomp.downcase
     end
 end

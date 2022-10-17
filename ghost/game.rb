@@ -14,6 +14,10 @@ class Game
         @players.each { |player| @losses[player] = 0 }
     end
 
+    def dictionary
+        @dictionary ||= Set.new IO.readlines("dictionary.txt").map { |word| word.chomp }
+    end
+
     def next_player!
         @current = @players.rotate![0]
         @previous = @players[-1]
